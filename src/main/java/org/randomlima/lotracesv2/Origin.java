@@ -1,15 +1,20 @@
 package org.randomlima.lotracesv2;
 
+import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
 import org.bukkit.entity.Player;
 import org.randomlima.lotracesv2.Managers.ODSManager;
+
+import java.util.logging.Level;
 
 public class Origin {
     private final LOTRacesV2 plugin;
     private ODSManager odsManager;
     //private final String data;
     private String name; // default:
+    private double armor;
+    private double armorToughness;
     private double attackDamage; // default: 1 (0~2048)
     private double attackKnockback; // default: 0 (0~5)
     //private double attackReach; // default: 2.5 (0~6)
@@ -48,6 +53,12 @@ public class Origin {
         applyValues();
     }
     public void applyPlayer(Player player){
+        AttributeInstance a = player.getAttribute(Attribute.GENERIC_ARMOR);
+        if (a != null) a.setBaseValue(armor);
+
+        AttributeInstance at = player.getAttribute(Attribute.GENERIC_ARMOR_TOUGHNESS);
+        if (at != null) at.setBaseValue(armorToughness);
+
         AttributeInstance ad = player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE);
         if (ad != null) ad.setBaseValue(attackDamage);
 
@@ -125,31 +136,38 @@ public class Origin {
 
     }
     public void applyValues(){
-        this.attackDamage = odsManager.getDouble(name, "attackDamage");
-        this.attackKnockback = odsManager.getDouble(name, "attackKnockback");
-        //this.attackReach = odsManager.getDouble(name, "attackReach");
-        this.attackSpeed = odsManager.getDouble(name, "attackSpeed");
-        this.knockbackResistance = odsManager.getDouble(name, "knockbackResistance");
-        this.luck = odsManager.getDouble(name, "luck");
-        this.maxHealth = odsManager.getDouble(name, "maxHealth");
-        this.movementSpeed = odsManager.getDouble(name, "movementSpeed");
-        this.scale = odsManager.getDouble(name, "scale");
-        this.stepHeight = odsManager.getDouble(name, "stepHeight");
-        this.jumpStrength = odsManager.getDouble(name, "jumpStrength");
-        this.blockInteractionRange = odsManager.getDouble(name, "blockInteractionRange");
-        this.entityInteractionRange = odsManager.getDouble(name, "entityInteractionRange");
-        this.blockBreakSpeed = odsManager.getDouble(name, "blockBreakSpeed");
-        this.gravity = odsManager.getDouble(name, "gravity");
-        this.safeFallDistance = odsManager.getDouble(name, "safeFallDistance");
-        this.fallDamageMultiplier = odsManager.getDouble(name, "fallDamageMultiplier");
-        this.burningTime = odsManager.getDouble(name, "burningTime");
-        this.explosionKnockbackResistance = odsManager.getDouble(name, "explosionKnockbackResistance");
-        this.miningEfficiency = odsManager.getDouble(name, "miningEfficiency");
-        this.movementEfficiency = odsManager.getDouble(name, "movementEfficiency");
-        this.oxygenBonus = odsManager.getDouble(name, "oxygenBonus");
-        this.sneakingSpeed = odsManager.getDouble(name, "sneakingSpeed");
-        this.submergedMiningSpeed = odsManager.getDouble(name, "submergedMiningSpeed");
-        this.sweepingDamageRatio = odsManager.getDouble(name, "sweepingDamageRatio");
-        this.waterMovementEfficiency = odsManager.getDouble(name, "waterMovementEfficiency");
+        try{
+            this.armor = odsManager.getDouble(name, "armor");
+            this.armorToughness = odsManager.getDouble(name, "armorToughness");
+            this.attackDamage = odsManager.getDouble(name, "attackDamage");
+            this.attackKnockback = odsManager.getDouble(name, "attackKnockback");
+            this.attackSpeed = odsManager.getDouble(name, "attackSpeed");
+            this.knockbackResistance = odsManager.getDouble(name, "knockbackResistance");
+            this.luck = odsManager.getDouble(name, "luck");
+            this.maxHealth = odsManager.getDouble(name, "maxHealth");
+            this.movementSpeed = odsManager.getDouble(name, "movementSpeed");
+            this.scale = odsManager.getDouble(name, "scale");
+            this.stepHeight = odsManager.getDouble(name, "stepHeight");
+            this.jumpStrength = odsManager.getDouble(name, "jumpStrength");
+            this.blockInteractionRange = odsManager.getDouble(name, "blockInteractionRange");
+            this.entityInteractionRange = odsManager.getDouble(name, "entityInteractionRange");
+            this.blockBreakSpeed = odsManager.getDouble(name, "blockBreakSpeed");
+            this.gravity = odsManager.getDouble(name, "gravity");
+            this.safeFallDistance = odsManager.getDouble(name, "safeFallDistance");
+            this.fallDamageMultiplier = odsManager.getDouble(name, "fallDamageMultiplier");
+            this.burningTime = odsManager.getDouble(name, "burningTime");
+            this.explosionKnockbackResistance = odsManager.getDouble(name, "explosionKnockbackResistance");
+            this.miningEfficiency = odsManager.getDouble(name, "miningEfficiency");
+            this.movementEfficiency = odsManager.getDouble(name, "movementEfficiency");
+            this.oxygenBonus = odsManager.getDouble(name, "oxygenBonus");
+            this.sneakingSpeed = odsManager.getDouble(name, "sneakingSpeed");
+            this.submergedMiningSpeed = odsManager.getDouble(name, "submergedMiningSpeed");
+            this.sweepingDamageRatio = odsManager.getDouble(name, "sweepingDamageRatio");
+            this.waterMovementEfficiency = odsManager.getDouble(name, "waterMovementEfficiency");
+        } catch (Exception e){
+            Bukkit.getLogger().log(Level.SEVERE, "Failed to apply values: "+e.getMessage());
+            Bukkit.getLogger().log(Level.SEVERE, "This may be due to missing values. Make sure you included everything.");
+        }
+
     }
 }

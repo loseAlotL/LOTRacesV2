@@ -1,6 +1,41 @@
+# See https://minecraft.wiki/w/Attribute for more info on attributes.
+#
+# Attribute : Effective value range
+# armor: 0-30
+# armor_toughness: 0-20
+# attack_damage: 0-2048
+# attack_knockback: 0-5
+# attack_speed: 0-1024
+# knockback_resistance: 0-1
+# luck: -1024-1024
+# max_health: 1-1024
+# movement_speed: 0-1024
+# scale: 0.0625-16
+# step_height: 0-10
+# jump_strength: 0-32
+# block_interaction_range: 0-64
+# entity_interaction_range: 0-64
+# block_break_speed: 0-1024
+# gravity: -1-1
+# safe_fall_distance: -1024-1024
+# fall_damage_multiplier: 0-100
+# burning_time: 0-1024
+# explosion_knockback_resistance: 0-1
+# mining_efficiency: 0-1024
+# movement_efficiency: 0-1
+# oxygen_bonus: 0-1
+# sneaking_speed: 0-1
+# submerged_mining_speed: 0-20
+# sweeping_damage_ratio: 0-1
+# water_movement_efficiency: 0-1
+#
+# (This data was taken from https://minecraft.wiki/w/Attribute)
+
 origins:
   defaultOrigin:
     name: "defaultOrigin"
+    armor: 0
+    armorToughness: 0
     attackDamage: 1
     attackKnockback: 0
     attackSpeed: 4
@@ -9,33 +44,6 @@ origins:
     maxHealth: 20
     movementSpeed: 0.1
     scale: 1
-    stepHeight: 0.6
-    jumpStrength: 0.42
-    blockInteractionRange: 4.5
-    entityInteractionRange: 3
-    blockBreakSpeed: 1
-    gravity: 0.08
-    safeFallDistance: 3
-    fallDamageMultiplier: 1
-    burningTime: 1
-    explosionKnockbackResistance: 0
-    miningEfficiency: 0
-    movementEfficiency: 0
-    oxygenBonus: 0
-    sneakingSpeed: 0.3
-    submergedMiningSpeed: 0.2
-    sweepingDamageRatio: 0
-    waterMovementEfficiency: 0
-  dwarfOrigin:
-    name: "dwarfOrigin"
-    attackDamage: 1
-    attackKnockback: 0
-    attackSpeed: 4
-    knockbackResistance: 0
-    luck: 0
-    maxHealth: 20
-    movementSpeed: 0.2
-    scale: 1.5
     stepHeight: 0.6
     jumpStrength: 0.42
     blockInteractionRange: 4.5

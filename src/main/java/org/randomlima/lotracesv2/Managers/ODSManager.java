@@ -1,5 +1,6 @@
 package org.randomlima.lotracesv2.Managers;
 
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.randomlima.lotracesv2.LOTRacesV2;
@@ -8,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 public class ODSManager {
     private final LOTRacesV2 plugin;
@@ -40,11 +42,21 @@ public class ODSManager {
     }
 
     public String getName(String originKey) {
-        return originsConfig.getString("origins." + originKey + ".name", "Default Name");
+        try {
+            return originsConfig.getString("origins." + originKey + ".name", "defaultOrigin");
+        } catch (Exception e){
+            Bukkit.getLogger().log(Level.SEVERE, "Failed to retrieve name for origin: " + originKey, e);
+            return "defaultOrigin";
+        }
     }
 
     public double getDouble(String originKey, String attribute) {
-        return originsConfig.getDouble("origins." + originKey + "." + attribute, 0.0);
+        try {
+            return originsConfig.getDouble("origins." + originKey + "." + attribute, 0.0);
+        } catch (Exception e){
+            Bukkit.getLogger().log(Level.SEVERE, "Failed to retrieve double attribute for origin: " + originKey + " and attribute: " + attribute, e);
+            return 0.0;
+        }
     }
     public List<String> getOrigins() {
         return new ArrayList<>(originsConfig.getConfigurationSection("origins").getKeys(false));

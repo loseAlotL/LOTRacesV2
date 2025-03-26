@@ -10,6 +10,7 @@ import org.randomlima.lotracesv2.LOTRacesV2;
 import org.randomlima.lotracesv2.Managers.ODSManager;
 import org.randomlima.lotracesv2.Origin;
 import org.randomlima.lotracesv2.Utils.Colorize;
+import org.randomlima.lotracesv2.Utils.MessageUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,29 +28,25 @@ public class SetOriginCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length != 2) {
-            sender.sendMessage(Colorize.format("Usage: /setorigin <player> <origin>"));
+            sender.sendMessage(Colorize.format(MessageUtil.header + "&cUsage: /setorigin <player> <origin>"));
             return true;
         }
 
         Player target = Bukkit.getPlayer(args[0]);
         if (target == null) {
-            sender.sendMessage(Colorize.format("Player not found."));
+            sender.sendMessage(Colorize.format(MessageUtil.header + MessageUtil.error + "&4Player not found"));
             return true;
         }
 
         String origin = args[1];
 
         List<String> validOrigins = odsManager.getOrigins();
-        target.sendMessage("Valid Origins:");
-        for(String s : validOrigins){
-            target.sendMessage("- "+s);
-        }
         if(validOrigins.contains(origin)){
             Origin newOrigin = new Origin(plugin, origin);
-            target.sendMessage(Colorize.format("Your origin has been set to: "+ origin));
+            target.sendMessage(Colorize.format(MessageUtil.header + "Your origin has been set to: "+ origin));
             newOrigin.applyPlayer(target);
         } else {
-            target.sendMessage(Colorize.format(origin+" is not a valid origin. See origins.yml for valid origins."));
+            target.sendMessage(Colorize.format(MessageUtil.header + MessageUtil.error+origin+" &cis not a valid origin. See &4origins.yml &cfor valid origins."));
         }
 
         return true;
