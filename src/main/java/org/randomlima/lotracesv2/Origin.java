@@ -69,10 +69,10 @@ public class Origin {
         AttributeInstance ms = player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED);
         if (ms != null) ms.setBaseValue(movementSpeed);
 
-        AttributeInstance s = player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED);
+        AttributeInstance s = player.getAttribute(Attribute.GENERIC_SCALE);
         if (s != null) s.setBaseValue(scale);
 
-        AttributeInstance sh = player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED);
+        AttributeInstance sh = player.getAttribute(Attribute.GENERIC_STEP_HEIGHT);
         if (sh != null) sh.setBaseValue(stepHeight);
 
         AttributeInstance js = player.getAttribute(Attribute.GENERIC_JUMP_STRENGTH);

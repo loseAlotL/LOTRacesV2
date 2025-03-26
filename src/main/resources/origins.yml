@@ -34,8 +34,8 @@ origins:
     knockbackResistance: 0
     luck: 0
     maxHealth: 20
-    movementSpeed: 0.1
-    scale: 2 # edited this <-----------------------------------------------------------------
+    movementSpeed: 0.2
+    scale: 1.5
     stepHeight: 0.6
     jumpStrength: 0.42
     blockInteractionRange: 4.5
