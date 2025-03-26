@@ -1,0 +1,10 @@
+name: LOTRacesV2
+version: '${project.version}'
+main: org.randomlima.lotracesv2.LOTRacesV2
+api-version: '1.21'
+commands:
+  setorigin:
+    description: Sets the origin for a player.
+    usage: /setOrigin <player> <origin>
+    permission: "lotraces.setorigin"
+    permission-message: "GG no perms. You don't have permission to use this command."

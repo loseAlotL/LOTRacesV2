@@ -1,0 +1,55 @@
+origins:
+  defaultOrigin:
+    name: "defaultOrigin"
+    attackDamage: 1
+    attackKnockback: 0
+    attackSpeed: 4
+    knockbackResistance: 0
+    luck: 0
+    maxHealth: 20
+    movementSpeed: 0.1
+    scale: 1
+    stepHeight: 0.6
+    jumpStrength: 0.42
+    blockInteractionRange: 4.5
+    entityInteractionRange: 3
+    blockBreakSpeed: 1
+    gravity: 0.08
+    safeFallDistance: 3
+    fallDamageMultiplier: 1
+    burningTime: 1
+    explosionKnockbackResistance: 0
+    miningEfficiency: 0
+    movementEfficiency: 0
+    oxygenBonus: 0
+    sneakingSpeed: 0.3
+    submergedMiningSpeed: 0.2
+    sweepingDamageRatio: 0
+    waterMovementEfficiency: 0
+  dwarfOrigin:
+    name: "dwarfOrigin"
+    attackDamage: 1
+    attackKnockback: 0
+    attackSpeed: 4
+    knockbackResistance: 0
+    luck: 0
+    maxHealth: 20
+    movementSpeed: 0.1
+    scale: 0.75 # edited this <-----------------------------------------------------------------
+    stepHeight: 0.6
+    jumpStrength: 0.42
+    blockInteractionRange: 4.5
+    entityInteractionRange: 3
+    blockBreakSpeed: 1
+    gravity: 0.08
+    safeFallDistance: 3
+    fallDamageMultiplier: 1
+    burningTime: 1
+    explosionKnockbackResistance: 0
+    miningEfficiency: 0
+    movementEfficiency: 0
+    oxygenBonus: 0
+    sneakingSpeed: 0.3
+    submergedMiningSpeed: 0.2
+    sweepingDamageRatio: 0
+    waterMovementEfficiency: 0

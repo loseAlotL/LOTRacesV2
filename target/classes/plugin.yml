@@ -1,0 +1,8 @@
+name: LOTRacesV2
+version: '1.0-SNAPSHOT'
+main: org.randomlima.lotracesv2.LOTRacesV2
+api-version: '1.21'
+commands:
+  setorigin:
+    description: Sets the origin for a player.
+    usage: /setOrigin <player> <origin>
