@@ -5,6 +5,7 @@ import org.randomlima.lotracesv2.Commands.SetOriginCommand;
 import org.randomlima.lotracesv2.Commands.SetOriginTabCompleter;
 import org.randomlima.lotracesv2.Listeners.ItemSwapListener;
 import org.randomlima.lotracesv2.Managers.ODSManager;
+import org.randomlima.lotracesv2.Managers.OriginPlayerManager;
 
 public final class LOTRacesV2 extends JavaPlugin {
 
@@ -14,6 +15,8 @@ public final class LOTRacesV2 extends JavaPlugin {
 
 
         ODSManager odsManager = new ODSManager(this);
+        OriginPlayerManager originPlayerManager = new OriginPlayerManager(this);
+        originPlayerManager.loadOrigins();
 
         getServer().getPluginManager().registerEvents(new ItemSwapListener(this), this);
 

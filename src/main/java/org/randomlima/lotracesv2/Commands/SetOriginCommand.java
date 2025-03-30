@@ -41,19 +41,17 @@ public class SetOriginCommand implements CommandExecutor {
             return true;
         }
 
-        String origin = args[1];
+        String name = args[1];
 
         List<String> validOrigins = odsManager.getOrigins();
-        if(validOrigins.contains(origin)){
-            Origin newOrigin = new Origin(plugin, origin);
-            target.sendMessage(Colorize.format(MessageUtil.header + "Your origin has been set to: "+ origin));
-            newOrigin.applyPlayer(target);
+        if(validOrigins.contains(name)){
+            target.sendMessage(Colorize.format(MessageUtil.header + "Your origin has been set to: "+ name));
 
-            originPlayerManager.addPlayer(target, newOrigin); // add player to manager
+            originPlayerManager.setPlayerOrigin(target, name);
             target.sendMessage("added you to originPlayerManager");
 
         } else {
-            target.sendMessage(Colorize.format(MessageUtil.header + MessageUtil.error+origin+" &cis not a valid origin. See &4origins.yml &cfor valid origins."));
+            target.sendMessage(Colorize.format(MessageUtil.header + MessageUtil.error+name+" &cis not a valid origin. See &4origins.yml &cfor valid origins."));
         }
 
         return true;
