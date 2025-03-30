@@ -50,16 +50,27 @@ public class ODSManager {
         }
     }
 
-    public double getDouble(String originKey, String attribute) {
+    public double getAttribute(String originKey, String attribute) {
         try {
-            return originsConfig.getDouble("origins." + originKey + "." + attribute, 0.0);
+            return originsConfig.getDouble("origins." + originKey + ".attributes." + attribute, 0.0);
         } catch (Exception e){
             Bukkit.getLogger().log(Level.SEVERE, "Failed to retrieve double attribute for origin: " + originKey + " and attribute: " + attribute, e);
             return 0.0;
         }
     }
+    public double getDebuffAttribute(String originKey, String attribute) {
+        try {
+            return originsConfig.getDouble("origins." + originKey + ".debuffAttributes." + attribute, 0.0);
+        } catch (Exception e){
+            Bukkit.getLogger().log(Level.SEVERE, "Failed to retrieve double attribute for origin: " + originKey + " and attribute: " + attribute, e);
+            return 0.0;
+        }
+    }
+    public List<String> getRings(String originKey) {
+        if (originKey == null || originKey.isEmpty()) return new ArrayList<>();
+        return originsConfig.getStringList("origins." + originKey + ".rings");
+    }
     public List<String> getOrigins() {
         return new ArrayList<>(originsConfig.getConfigurationSection("origins").getKeys(false));
     }
-
 }
