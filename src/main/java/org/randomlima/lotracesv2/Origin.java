@@ -1,5 +1,6 @@
 package org.randomlima.lotracesv2;
 
+
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeInstance;
@@ -73,33 +74,33 @@ public class Origin {
 
     private Attribute getBukkitAttribute(String key) {
         switch (key) {
-            case "armor": return Attribute.GENERIC_ARMOR;
-            case "armorToughness": return Attribute.GENERIC_ARMOR_TOUGHNESS;
-            case "attackDamage": return Attribute.GENERIC_ATTACK_DAMAGE;
-            case "attackKnockback": return Attribute.GENERIC_ATTACK_KNOCKBACK;
-            case "attackSpeed": return Attribute.GENERIC_ATTACK_SPEED;
-            case "knockbackResistance": return Attribute.GENERIC_KNOCKBACK_RESISTANCE;
-            case "luck": return Attribute.GENERIC_LUCK;
-            case "maxHealth": return Attribute.GENERIC_MAX_HEALTH;
-            case "movementSpeed": return Attribute.GENERIC_MOVEMENT_SPEED;
-            case "scale": return Attribute.GENERIC_SCALE;
-            case "stepHeight": return Attribute.GENERIC_STEP_HEIGHT;
-            case "jumpStrength": return Attribute.GENERIC_JUMP_STRENGTH;
-            case "blockInteractionRange": return Attribute.PLAYER_BLOCK_INTERACTION_RANGE;
-            case "entityInteractionRange": return Attribute.PLAYER_ENTITY_INTERACTION_RANGE;
-            case "blockBreakSpeed": return Attribute.PLAYER_BLOCK_BREAK_SPEED;
-            case "gravity": return Attribute.GENERIC_GRAVITY;
-            case "safeFallDistance": return Attribute.GENERIC_SAFE_FALL_DISTANCE;
-            case "fallDamageMultiplier": return Attribute.GENERIC_FALL_DAMAGE_MULTIPLIER;
-            case "burningTime": return Attribute.GENERIC_BURNING_TIME;
-            case "explosionKnockbackResistance": return Attribute.GENERIC_EXPLOSION_KNOCKBACK_RESISTANCE;
-            case "miningEfficiency": return Attribute.PLAYER_MINING_EFFICIENCY;
-            case "movementEfficiency": return Attribute.GENERIC_MOVEMENT_EFFICIENCY;
-            case "oxygenBonus": return Attribute.GENERIC_OXYGEN_BONUS;
-            case "sneakingSpeed": return Attribute.PLAYER_SNEAKING_SPEED;
-            case "submergedMiningSpeed": return Attribute.PLAYER_SUBMERGED_MINING_SPEED;
-            case "sweepingDamageRatio": return Attribute.PLAYER_SWEEPING_DAMAGE_RATIO;
-            case "waterMovementEfficiency": return Attribute.GENERIC_WATER_MOVEMENT_EFFICIENCY;
+            case "armor": return Attribute.ARMOR;
+            case "armorToughness": return Attribute.ARMOR_TOUGHNESS;
+            case "attackDamage": return Attribute.ATTACK_DAMAGE;
+            case "attackKnockback": return Attribute.ATTACK_KNOCKBACK;
+            case "attackSpeed": return Attribute.ATTACK_SPEED;
+            case "knockbackResistance": return Attribute.KNOCKBACK_RESISTANCE;
+            case "luck": return Attribute.LUCK;
+            case "maxHealth": return Attribute.MAX_HEALTH;
+            case "movementSpeed": return Attribute.MOVEMENT_SPEED;
+            case "scale": return Attribute.SCALE;
+            case "stepHeight": return Attribute.STEP_HEIGHT;
+            case "jumpStrength": return Attribute.JUMP_STRENGTH;
+            case "blockInteractionRange": return Attribute.BLOCK_INTERACTION_RANGE;
+            case "entityInteractionRange": return Attribute.ENTITY_INTERACTION_RANGE;
+            case "blockBreakSpeed": return Attribute.BLOCK_BREAK_SPEED;
+            case "gravity": return Attribute.GRAVITY;
+            case "safeFallDistance": return Attribute.SAFE_FALL_DISTANCE;
+            case "fallDamageMultiplier": return Attribute.FALL_DAMAGE_MULTIPLIER;
+            case "burningTime": return Attribute.BURNING_TIME;
+            case "explosionKnockbackResistance": return Attribute.EXPLOSION_KNOCKBACK_RESISTANCE;
+            case "miningEfficiency": return Attribute.MINING_EFFICIENCY;
+            case "movementEfficiency": return Attribute.MOVEMENT_EFFICIENCY;
+            case "oxygenBonus": return Attribute.OXYGEN_BONUS;
+            case "sneakingSpeed": return Attribute.SNEAKING_SPEED;
+            case "submergedMiningSpeed": return Attribute.SUBMERGED_MINING_SPEED;
+            case "sweepingDamageRatio": return Attribute.SWEEPING_DAMAGE_RATIO;
+            case "waterMovementEfficiency": return Attribute.WATER_MOVEMENT_EFFICIENCY;
             default: return null;
         }
     }

@@ -1,7 +1,6 @@
 package org.randomlima.lotracesv2.Commands;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,12 +8,9 @@ import org.bukkit.entity.Player;
 import org.randomlima.lotracesv2.LOTRacesV2;
 import org.randomlima.lotracesv2.Managers.ODSManager;
 import org.randomlima.lotracesv2.Managers.OriginPlayerManager;
-import org.randomlima.lotracesv2.Origin;
 import org.randomlima.lotracesv2.Utils.Colorize;
 import org.randomlima.lotracesv2.Utils.MessageUtil;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SetOriginCommand implements CommandExecutor {
@@ -52,6 +48,7 @@ public class SetOriginCommand implements CommandExecutor {
 
         } else {
             target.sendMessage(Colorize.format(MessageUtil.header + MessageUtil.error+name+" &cis not a valid origin. See &4origins.yml &cfor valid origins."));
+
         }
 
         return true;
