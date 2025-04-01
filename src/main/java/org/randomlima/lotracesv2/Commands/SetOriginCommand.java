@@ -5,6 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.randomlima.lotracesv2.Entities.ZombieWolfSpawner;
 import org.randomlima.lotracesv2.LOTRacesV2;
 import org.randomlima.lotracesv2.Managers.ODSManager;
 import org.randomlima.lotracesv2.Managers.OriginPlayerManager;
@@ -44,6 +45,7 @@ public class SetOriginCommand implements CommandExecutor {
             target.sendMessage(Colorize.format(MessageUtil.header + "Your origin has been set to: "+ name));
 
             originPlayerManager.setPlayerOrigin(target, name);
+            ZombieWolfSpawner.spawnZombieWolf(target, target.getLocation());
             target.sendMessage("added you to originPlayerManager");
 
         } else {
